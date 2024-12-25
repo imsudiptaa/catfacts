@@ -6,24 +6,30 @@
     <title>Cat Facts</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f0f0f0;
             margin: 0;
             padding: 20px;
+            background-image: url('https://source.unsplash.com/1600x900/?cats');
+            background-size: cover;
+            background-position: center;
+            color: #333;
         }
 
         .container {
             max-width: 600px;
             margin: auto;
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
             text-align: center;
-            color: #333;
+            color: #007bff;
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
 
         ul {
@@ -32,10 +38,52 @@
         }
 
         li {
-            background: #e0e0e0;
+            background: rgba(255, 255, 255, 0.8);
             margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        li img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            button {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -64,7 +112,7 @@
             factsList.innerHTML = ''; // Clear previous facts
             facts.forEach(fact => {
                 const li = document.createElement('li');
-                li.textContent = fact;
+                li.innerHTML = `<img src="https://source.unsplash.com/50x50/?cat" alt="Cat Image"> ${fact}`;
                 factsList.appendChild(li);
             });
         });
