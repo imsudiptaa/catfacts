@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #e0e0e0;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Facts About Cats</h1>
+        <ul id="facts-list"></ul>
+        <button id="generate-facts">Generate Facts</button>
+    </div>
+    <script>
+        const facts = [
+            "Cats have highly sensitive whiskers that can detect changes in their environment, helping them navigate in the dark.",
+            "Cats purr not only when they are happy but also when they are frightened or in pain. Purring can have a calming effect and may even promote healing.",
+            "Just like human fingerprints, each cat has a unique nose print that can be used to identify them.",
+            "Cats sleep for about 12 to 16 hours a day, which means they spend nearly two-thirds of their lives sleeping!",
+            "Cats have a special way of communicating with humans. They often use a specific set of vocalizations that they don’t use with other cats.",
+            "Cats can jump up to six times their body length in one leap, thanks to their powerful leg muscles.",
+            "Cats were domesticated around 9,000 years ago in the Near East, making them one of the oldest domesticated animals.",
+            "Cats can see in color, but their color vision is limited compared to humans. They see shades of blue and green but have difficulty distinguishing reds.",
+            "Cats spend about 30% of their waking hours grooming themselves, which helps them regulate their body temperature and keep their fur clean.",
+            "While cats are often seen as solitary animals, they can form strong social bonds with humans and other pets, and they can even be trained to follow commands."
+        ];
+
+        document.getElementById('generate-facts').addEventListener('click', function() {
+            const factsList = document.getElementById('facts-list');
+            factsList.innerHTML = ''; // Clear previous facts
+            facts.forEach(fact => {
+                const li = document.createElement('li');
+                li.textContent = fact;
+                factsList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>
